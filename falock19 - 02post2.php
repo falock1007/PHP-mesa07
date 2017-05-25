@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 2017/5/24
- * Time: 下午 04:32
- */
+$upload = $_FILES['upload'];
+foreach ($upload['error'] as $index => $error){
+    if ($error == 0){
+        copy($upload['tmp_name'][$index],
+            "./upload/{$upload['name'][$index]}");
+    }
+}
