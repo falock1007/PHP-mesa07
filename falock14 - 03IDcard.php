@@ -2,7 +2,7 @@
 
 function isRightTWID(string $twid)
 {
-    $ret = 0;
+    $ret = 0; //格式錯誤
     if (preg_match('/^[A-Z][12][0-9]{8}$/', $twid) > 0) {
         $n12s = substr($twid, 0, 1);
         $letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
@@ -20,9 +20,9 @@ function isRightTWID(string $twid)
         $n11 = substr($twid, 9, 1);
         $sum = $n1 * 1 + $n2 * 9 + $n3 * 8 + $n4 * 7 + $n5 * 6 + $n6 * 5 + $n7 * 4 + $n8 * 3 + $n9 * 2 + $n10 * 1 + $n11 * 1;
         if ($sum % 10 == 0) {
-            $ret = 1;
+            $ret = 1; //正確
         } else {
-            $ret = -1;
+            $ret = -1; //錯誤
         }
     }
     return $ret;
