@@ -8,7 +8,7 @@
     $cartObj = $_SESSION['cart'];
 //    $var1 = $_SESSION['var1'];
 
-    echo 'Page 2<hr>';
+
 //    echo $var1 . '<br>';
 
     $list = $cartObj->getList();
