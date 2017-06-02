@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<input id="click" type="button" value="click" />
+<div id="here"></div>
+<script>
+//    $("#click").click(function(){
+//       $.get("falock38-AJAX.php", function (data, status) {
+////          $("#here").html(status);
+//            if (status == 'success'){
+//                $("#here").html(data);
+//            }
+//       });
+//    });
+    $("#click").click(function() {
+        setInterval(doit,1000);
+    });
+
+    function doit(){
+        $.get("falock38-AJAX.php", function (data, status) {
+    //          $("#here").html(status);
+            if (status == 'success'){
+                $("#here").html(data);
+            }
+        });
+    };
+</script>
+
+
+</body>
+</html>
