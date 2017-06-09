@@ -5,7 +5,7 @@ echo "{$passwd1}<br>";
 $hash1 = password_hash($passwd1, PASSWORD_DEFAULT);
 echo "{$hash1}<br>";
 
-if (password_verify($passwd2, $hash1)){
+if (password_verify($passwd1, $hash1)){
     echo 'OK';
 }else {
     echo 'XX';

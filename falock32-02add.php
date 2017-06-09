@@ -40,13 +40,14 @@
 if (isset($_GET['account'])){
     $account = $_GET['account'];
     $passwd = password_hash($_GET['passwd'], PASSWORD_DEFAULT);
+    if (password_verify($passwd,$_GET['passwd'])){echo 'OK';}else{echo 'XX';}
     $realname = $_GET['realname'];
     $sql = "insert into member (account,passwd,realname) " .
         "values ('{$account}','{$passwd}','{$realname}')";
     $db = @new mysqli('127.0.0.1',
         'root','root','falco');
     $db->query($sql);
-    header("Location: falock32-01.php");
+//    header("Location: falock32-01.php");
 }
 ?>
 <form>

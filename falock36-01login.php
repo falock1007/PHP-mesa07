@@ -9,7 +9,8 @@ if (isset($_POST['account'])){
     ($stmt = $pdo->prepare($sql))->execute([$account]);
     if ($stmt->rowCount()>0){
         $memberObj = $stmt->fetchObject();
-        if (password_verify($passwd, $memberObj->passwd)){
+        $dbPasswd = $memberObj->passwd;
+        if (password_verify($passwd, $dbPasswd)){
             $_SESSION['member'] = $memberObj;
             header("Location: falock36-02main.php");
         }else{
